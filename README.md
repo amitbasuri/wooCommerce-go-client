@@ -20,4 +20,5 @@ func main() {
                         "per_page": []string{"20"}}
                     )
     //...
+}
 ```
