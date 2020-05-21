@@ -11,7 +11,7 @@ go test ./...
 client := NewClient("https://example.com/", "ck_xxxxxx", "cs_xxxxxx")
 products, err := client.QueryProducts(
                     url.Values{
-	                    "page":     []string{"2"},
+                        "page":     []string{"2"},
                         "per_page": []string{"20"}}
                     )
 ```
