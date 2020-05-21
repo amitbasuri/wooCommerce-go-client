@@ -1,12 +1,8 @@
 # wooCommerce-connector
-wooCommerce go client for shoptype
 
 ![](https://github.com/shoptype/wooCommerce-connector/workflows/Test/badge.svg)
 
-### Run tests
-```bash
-go test ./...
-```
+wooCommerce go client for shoptype
 
 ### Example Usage
 ```go
@@ -21,4 +17,9 @@ func main() {
                     )
     //...
 }
+```
+
+### Run tests
+```bash
+go test ./...
 ```
