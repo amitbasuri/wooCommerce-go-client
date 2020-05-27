@@ -2,7 +2,7 @@
 
 ![](https://github.com/shoptype/wooCommerce-connector/workflows/Test/badge.svg)
 
-wooCommerce go client for shoptype
+wooCommerce go client
 
 ### Example Usage
 ```go

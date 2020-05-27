@@ -23,6 +23,9 @@ func TestClient_QueryProducts(t *testing.T) {
 
 		p, err := testClient.QueryProducts(url.Values{string(QueryParamPage): []string{next}})
 		assert.NoError(t, err)
+		if err != nil {
+			break
+		}
 		next = p.NextPage
 	}
 
@@ -39,6 +42,9 @@ func TestClient_QueryProductVariations(t *testing.T) {
 
 		p, err := testClient.QueryProductVariations(37, url.Values{string(QueryParamPage): []string{next}})
 		assert.NoError(t, err)
+		if err != nil {
+			break
+		}
 		next = p.NextPage
 	}
 

@@ -27,7 +27,7 @@ type ProductVariation struct {
 	RegularPrice     string               `json:"regular_price"`
 	SalePrice        string               `json:"sale_price"`
 	Tags             []Tag                `json:"tags"`
-	Images           []Image              `json:"images"`
+	Images           Image                `json:"image"`
 	Attributes       []VariationAttribute `json:"attributes"`
 	TaxStatus        TaxStatus            `json:"tax_status"`
 }
@@ -64,7 +64,7 @@ func (c *Client) QueryProductVariations(productId int, params url.Values) (*Quer
 	var products []ProductVariation
 	err = json.Unmarshal(bodyBytes, &products)
 	if err != nil {
-		return nil, NewError(err, http.StatusInternalServerError, "error unmarshal response")
+		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
 	response := &QueryProductsVariationResponse{

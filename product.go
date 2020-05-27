@@ -23,7 +23,7 @@ type Tag struct {
 }
 
 type Image struct {
-	Id  string `json:"id"`
+	Id  int    `json:"id"`
 	Src string `json:"src"`
 }
 
@@ -87,7 +87,7 @@ func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error
 	var products []Product
 	err = json.Unmarshal(bodyBytes, &products)
 	if err != nil {
-		return nil, NewError(err, http.StatusInternalServerError, "error unmarshal response")
+		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
 	response := &QueryProductsResponse{
