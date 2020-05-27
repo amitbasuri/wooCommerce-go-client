@@ -1,4 +1,4 @@
-package shoptypewooCommerce
+package wooCommerce
 
 import (
 	"github.com/tgglv/wc-api-go/client"

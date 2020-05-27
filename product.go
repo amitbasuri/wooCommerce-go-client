@@ -1,4 +1,4 @@
-package shoptypewooCommerce
+package wooCommerce
 
 import (
 	"encoding/json"
@@ -9,19 +9,52 @@ import (
 
 const ProductsEndpoint = "products"
 
+type ProductType string
+
+const (
+	ProductTypeSimple   = ProductType("simple")
+	ProductTypeVariable = ProductType("variable")
+)
+
+type Tag struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+	Slug string `json:"slug"`
+}
+
+type Image struct {
+	Id  string `json:"id"`
+	Src string `json:"src"`
+}
+
+type ProductAttribute struct {
+	ID        int      `json:"id"`
+	Name      string   `json:"name"`
+	Variation bool     `json:"variation"`
+	Options   []string `json:"options"`
+}
+
+type TaxStatus string
+
+const TaxStatusTaxable = TaxStatus("taxable")
+
 type Product struct {
-	ID               int    `json:"id"`
-	Name             string `json:"name"`
-	Slug             string `json:"slug"`
-	Permalink        string `json:"permalink"`
-	ProductType      string `json:"type"`
-	Status           string `json:"status"`
-	Description      string `json:"description"`
-	ShortDescription string `json:"short_description"`
-	Sku              string `json:"sku"`
-	Price            string `json:"price"`
-	RegularPrice     string `json:"regular_price"`
-	SalePrice        string `json:"sale_price"`
+	ID               int                `json:"id"`
+	Name             string             `json:"name"`
+	Slug             string             `json:"slug"`
+	Permalink        string             `json:"permalink"`
+	ProductType      ProductType        `json:"type"`
+	Status           string             `json:"status"`
+	Description      string             `json:"description"`
+	ShortDescription string             `json:"short_description"`
+	Sku              string             `json:"sku"`
+	Price            string             `json:"price"`
+	RegularPrice     string             `json:"regular_price"`
+	SalePrice        string             `json:"sale_price"`
+	Tags             []Tag              `json:"tags"`
+	Images           []Image            `json:"images"`
+	Attributes       []ProductAttribute `json:"attributes"`
+	TaxStatus        TaxStatus          `json:"tax_status"`
 }
 
 type QueryProductsResponse struct {

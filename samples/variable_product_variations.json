@@ -1,0 +1,794 @@
+[
+  {
+    "id": 282,
+    "date_created": "2020-05-20T10:14:53",
+    "date_created_gmt": "2020-05-20T15:14:53",
+    "date_modified": "2020-05-20T10:14:53",
+    "date_modified_gmt": "2020-05-20T15:14:53",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=30ml&attribute_smell=Scent",
+    "sku": "A1",
+    "price": "",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": false,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "30ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Scent"
+      }
+    ],
+    "menu_order": 6,
+    "meta_data": [
+      {
+        "id": 3387,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/282"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 281,
+    "date_created": "2020-05-20T10:14:53",
+    "date_created_gmt": "2020-05-20T15:14:53",
+    "date_modified": "2020-05-20T10:14:53",
+    "date_modified_gmt": "2020-05-20T15:14:53",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=30ml&attribute_smell=Earthy",
+    "sku": "A1",
+    "price": "",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": false,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "30ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Earthy"
+      }
+    ],
+    "menu_order": 5,
+    "meta_data": [
+      {
+        "id": 3368,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/281"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 280,
+    "date_created": "2020-05-20T10:14:53",
+    "date_created_gmt": "2020-05-20T15:14:53",
+    "date_modified": "2020-05-20T10:14:53",
+    "date_modified_gmt": "2020-05-20T15:14:53",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=20ml&attribute_smell=Scent",
+    "sku": "A1",
+    "price": "",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": false,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "20ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Scent"
+      }
+    ],
+    "menu_order": 4,
+    "meta_data": [
+      {
+        "id": 3349,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/280"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 279,
+    "date_created": "2020-05-20T10:14:53",
+    "date_created_gmt": "2020-05-20T15:14:53",
+    "date_modified": "2020-05-20T10:14:53",
+    "date_modified_gmt": "2020-05-20T15:14:53",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=20ml&attribute_smell=Floral",
+    "sku": "A1",
+    "price": "",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": false,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "20ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Floral"
+      }
+    ],
+    "menu_order": 3,
+    "meta_data": [
+      {
+        "id": 3330,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/279"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 278,
+    "date_created": "2020-05-20T10:14:53",
+    "date_created_gmt": "2020-05-20T15:14:53",
+    "date_modified": "2020-05-20T10:14:53",
+    "date_modified_gmt": "2020-05-20T15:14:53",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=10ml&attribute_smell=Scent",
+    "sku": "A1",
+    "price": "",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": false,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "10ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Scent"
+      }
+    ],
+    "menu_order": 2,
+    "meta_data": [
+      {
+        "id": 3311,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/278"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 277,
+    "date_created": "2020-05-20T10:14:53",
+    "date_created_gmt": "2020-05-20T15:14:53",
+    "date_modified": "2020-05-20T10:14:53",
+    "date_modified_gmt": "2020-05-20T15:14:53",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=10ml&attribute_smell=Earthy",
+    "sku": "A1",
+    "price": "",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": false,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "10ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Earthy"
+      }
+    ],
+    "menu_order": 1,
+    "meta_data": [
+      {
+        "id": 3292,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/277"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 276,
+    "date_created": "2020-05-20T10:09:53",
+    "date_created_gmt": "2020-05-20T15:09:53",
+    "date_modified": "2020-05-20T10:14:32",
+    "date_modified_gmt": "2020-05-20T15:14:32",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=30ml&attribute_smell=Floral",
+    "sku": "A1",
+    "price": "60",
+    "regular_price": "60",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 194,
+      "date_created": "2020-05-20T04:35:15",
+      "date_created_gmt": "2020-05-20T14:35:15",
+      "date_modified": "2020-05-20T04:35:15",
+      "date_modified_gmt": "2020-05-20T14:35:15",
+      "src": "https:\/\/i0.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/motii1.jpg?fit=853%2C1280&ssl=1",
+      "name": "motii1.jpg",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "30ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Floral"
+      }
+    ],
+    "menu_order": 9,
+    "meta_data": [
+      {
+        "id": 3253,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/276"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 275,
+    "date_created": "2020-05-20T10:09:53",
+    "date_created_gmt": "2020-05-20T15:09:53",
+    "date_modified": "2020-05-20T10:14:32",
+    "date_modified_gmt": "2020-05-20T15:14:32",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=20ml&attribute_smell=Earthy",
+    "sku": "A1",
+    "price": "40",
+    "regular_price": "40",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 241,
+      "date_created": "2020-05-20T04:35:39",
+      "date_created_gmt": "2020-05-20T14:35:39",
+      "date_modified": "2020-05-20T04:35:39",
+      "date_modified_gmt": "2020-05-20T14:35:39",
+      "src": "https:\/\/i1.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/orange2.jpg?fit=853%2C1280&ssl=1",
+      "name": "orange2.jpg",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "20ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Earthy"
+      }
+    ],
+    "menu_order": 8,
+    "meta_data": [
+      {
+        "id": 3235,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/275"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 274,
+    "date_created": "2020-05-20T10:09:53",
+    "date_created_gmt": "2020-05-20T15:09:53",
+    "date_modified": "2020-05-20T10:14:32",
+    "date_modified_gmt": "2020-05-20T15:14:32",
+    "description": "",
+    "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/?attribute_size=10ml&attribute_smell=Floral",
+    "sku": "A1",
+    "price": "20",
+    "regular_price": "20",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": false,
+    "status": "publish",
+    "purchasable": true,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": "parent",
+    "stock_quantity": 78,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "weight": "0.2",
+    "dimensions": {
+      "length": "50",
+      "width": "20",
+      "height": "50"
+    },
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "image": {
+      "id": 248,
+      "date_created": "2020-05-20T04:35:44",
+      "date_created_gmt": "2020-05-20T14:35:44",
+      "date_modified": "2020-05-20T04:35:44",
+      "date_modified_gmt": "2020-05-20T14:35:44",
+      "src": "https:\/\/i1.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/pink1.jpg?fit=853%2C1280&ssl=1",
+      "name": "pink1.jpg",
+      "alt": ""
+    },
+    "attributes": [
+      {
+        "id": 0,
+        "name": "Size",
+        "option": "10ml"
+      },
+      {
+        "id": 0,
+        "name": "Smell",
+        "option": "Floral"
+      }
+    ],
+    "menu_order": 7,
+    "meta_data": [
+      {
+        "id": 3217,
+        "key": "_created_via",
+        "value": "ajax-unknown"
+      }
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations\/274"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39\/variations"
+        }
+      ],
+      "up": [
+        {
+          "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+        }
+      ]
+    }
+  }
+]

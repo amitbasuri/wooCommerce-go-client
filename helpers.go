@@ -1,4 +1,4 @@
-package shoptypewooCommerce
+package wooCommerce
 
 import (
 	"net/http"
