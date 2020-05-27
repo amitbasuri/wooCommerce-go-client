@@ -6,7 +6,7 @@ A Golang wrapper for the WooCommerce REST API
 
 ### Example Usage
 ```go
-import "github.com/shoptype/wooCommerce-connector"
+import "github.com/shoptype/wooCommerce-go-client"
 
 func main() {
     client := NewClient("https://example.com/", "ck_xxxxxx", "cs_xxxxxx")

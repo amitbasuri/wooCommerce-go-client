@@ -1,4 +1,4 @@
-module github.com/shoptype/wooCommerce-connector
+module github.com/shoptype/wooCommerce-go-client
 
 go 1.13
 
