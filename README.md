@@ -1,8 +1,8 @@
-# wooCommerce-connector
+# wooCommerce-go-client
 
 ![](https://github.com/shoptype/wooCommerce-connector/workflows/Test/badge.svg)
 
-wooCommerce go client
+A Golang wrapper for the WooCommerce REST API
 
 ### Example Usage
 ```go
