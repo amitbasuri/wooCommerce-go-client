@@ -27,7 +27,7 @@ type ProductVariation struct {
 	RegularPrice     string               `json:"regular_price"`
 	SalePrice        string               `json:"sale_price"`
 	Tags             []Tag                `json:"tags"`
-	Images           Image                `json:"image"`
+	Image            Image                `json:"image"`
 	Attributes       []VariationAttribute `json:"attributes"`
 	TaxStatus        TaxStatus            `json:"tax_status"`
 }
