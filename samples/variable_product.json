@@ -1,0 +1,138 @@
+{
+  "id": 39,
+  "name": "Adoratherapy Test Product 1",
+  "slug": "adoratherapy-test-product-1",
+  "permalink": "https:\/\/shoptypewoo.wpcomstaging.com\/product\/adoratherapy-test-product-1\/",
+  "date_created": "2020-05-20T00:52:11",
+  "date_created_gmt": "2020-05-20T05:52:11",
+  "date_modified": "2020-05-20T10:14:53",
+  "date_modified_gmt": "2020-05-20T15:14:53",
+  "type": "variable",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "<p><img class=\"alignnone size-medium wp-image-40\" src=\"https:\/\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora2-300x271.jpeg\" alt=\"\" width=\"300\" height=\"271\" \/> <img class=\"alignnone size-medium wp-image-41\" src=\"https:\/\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora3-300x271.jpeg\" alt=\"\" width=\"300\" height=\"271\" \/> <img class=\"alignnone size-medium wp-image-42\" src=\"https:\/\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora4-300x271.jpeg\" alt=\"\" width=\"300\" height=\"271\" \/> <img class=\"alignnone size-medium wp-image-43\" src=\"https:\/\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora5-300x271.jpeg\" alt=\"\" width=\"300\" height=\"271\" \/> <img class=\"alignnone size-medium wp-image-44\" src=\"https:\/\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora6-300x271.jpeg\" alt=\"\" width=\"300\" height=\"271\" \/> <img class=\"alignnone size-medium wp-image-37\" src=\"https:\/\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1-300x271.jpeg\" alt=\"\" width=\"300\" height=\"271\" \/><\/p>\n",
+  "short_description": "<p>Intense and exotic, Abundance is magnetic &amp; captivating. With top notes of cinnamon, clove, and patchouli. If abundance, prosperity, success, and self-confidence are what you desire most then Abundance Room Boost will ground your intention. An alternative to candles, room fresheners and diffusers, this all natural, organic, vegan &amp; cruelty free room and body spray is like feng shui for your mood and the mood of your environment<\/p>\n",
+  "sku": "A1",
+  "price": "20",
+  "regular_price": "",
+  "sale_price": "",
+  "date_on_sale_from": null,
+  "date_on_sale_from_gmt": null,
+  "date_on_sale_to": null,
+  "date_on_sale_to_gmt": null,
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#36;<\/span>20.00<\/span> &ndash; <span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#36;<\/span>60.00<\/span>",
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": true,
+  "stock_quantity": 78,
+  "stock_status": "instock",
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "sold_individually": false,
+  "weight": "0.2",
+  "dimensions": {
+    "length": "50",
+    "width": "20",
+    "height": "50"
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "related_ids": [],
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [],
+  "tags": [],
+  "images": [
+    {
+      "id": 37,
+      "date_created": "2020-05-19T17:48:49",
+      "date_created_gmt": "2020-05-20T03:48:49",
+      "date_modified": "2020-05-19T17:48:49",
+      "date_modified_gmt": "2020-05-20T03:48:49",
+      "src": "https:\/\/i2.wp.com\/shoptypewoo.wpcomstaging.com\/wp-content\/uploads\/2020\/05\/adora1.jpeg?fit=1347%2C1216&ssl=1",
+      "name": "adora1",
+      "alt": ""
+    }
+  ],
+  "attributes": [
+    {
+      "id": 0,
+      "name": "Size",
+      "position": 0,
+      "visible": true,
+      "variation": true,
+      "options": [
+        "10ml",
+        "20ml",
+        "30ml"
+      ]
+    },
+    {
+      "id": 0,
+      "name": "Smell",
+      "position": 1,
+      "visible": true,
+      "variation": true,
+      "options": [
+        "Floral",
+        "Earthy",
+        "Scent"
+      ]
+    }
+  ],
+  "default_attributes": [],
+  "variations": [
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    274,
+    275,
+    276
+  ],
+  "grouped_products": [],
+  "menu_order": 0,
+  "meta_data": [
+    {
+      "id": 187,
+      "key": "_created_via",
+      "value": "post-new"
+    }
+  ],
+  "jetpack_publicize_connections": [],
+  "jetpack_likes_enabled": true,
+  "jetpack_sharing_enabled": true,
+  "_links": {
+    "self": [
+      {
+        "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products\/39"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https:\/\/shoptypewoo.wpcomstaging.com\/wp-json\/wc\/v3\/products"
+      }
+    ]
+  }
+}
