@@ -48,7 +48,7 @@ type Product struct {
 	Slug             string             `json:"slug"`
 	Permalink        string             `json:"permalink"`
 	ProductType      ProductType        `json:"type"`
-	Status           string             `json:"status"`
+	Status           Status             `json:"status"`
 	Description      string             `json:"description"`
 	ShortDescription string             `json:"short_description"`
 	Sku              string             `json:"sku"`
