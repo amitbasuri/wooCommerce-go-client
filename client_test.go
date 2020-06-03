@@ -49,3 +49,9 @@ func TestClient_QueryProductVariations(t *testing.T) {
 	}
 
 }
+
+func TestClient_SystemStatus(t *testing.T) {
+	s, err := testClient.SystemStatus()
+	assert.NoError(t, err)
+	assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
+}

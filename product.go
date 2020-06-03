@@ -38,13 +38,17 @@ type TaxStatus string
 
 const TaxStatusTaxable = TaxStatus("taxable")
 
+type Status string
+
+const StatusPublish = Status("publish")
+
 type Product struct {
 	ID               int                `json:"id"`
 	Name             string             `json:"name"`
 	Slug             string             `json:"slug"`
 	Permalink        string             `json:"permalink"`
 	ProductType      ProductType        `json:"type"`
-	Status           string             `json:"status"`
+	Status           Status             `json:"status"`
 	Description      string             `json:"description"`
 	ShortDescription string             `json:"short_description"`
 	Sku              string             `json:"sku"`
