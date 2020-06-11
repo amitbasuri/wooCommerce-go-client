@@ -1,0 +1,128 @@
+{
+  "id": 345,
+  "parent_id": 0,
+  "number": "345",
+  "order_key": "wc_order_lANIuwYxG5Ruu",
+  "created_via": "rest-api",
+  "version": "4.2.0",
+  "status": "completed",
+  "currency": "USD",
+  "date_created": "2020-06-09T08:08:52",
+  "date_created_gmt": "2020-06-09T13:08:52",
+  "date_modified": "2020-06-10T05:24:44",
+  "date_modified_gmt": "2020-06-10T10:24:44",
+  "discount_total": "0.00",
+  "discount_tax": "0.00",
+  "shipping_total": "10.00",
+  "shipping_tax": "0.00",
+  "cart_tax": "0.00",
+  "total": "10.00",
+  "total_tax": "0.00",
+  "prices_include_tax": false,
+  "customer_id": 0,
+  "customer_ip_address": "",
+  "customer_user_agent": "",
+  "customer_note": "",
+  "billing": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "",
+    "address_1": "969 Market",
+    "address_2": "",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US",
+    "email": "john.doe@example.com",
+    "phone": "(555) 555-5555"
+  },
+  "shipping": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "",
+    "address_1": "969 Market",
+    "address_2": "",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US"
+  },
+  "payment_method": "bacs",
+  "payment_method_title": "Direct Bank Transfer",
+  "transaction_id": "12345",
+  "date_paid": "2020-06-09T08:08:52",
+  "date_paid_gmt": "2020-06-09T13:08:52",
+  "date_completed": "2020-06-10T05:24:44",
+  "date_completed_gmt": "2020-06-10T10:24:44",
+  "cart_hash": "",
+  "meta_data": [
+    {
+      "id": 4520,
+      "key": "_shipping_phone",
+      "value": ""
+    }
+  ],
+  "line_items": [
+    {
+      "id": 37,
+      "name": "",
+      "product_id": 0,
+      "variation_id": 0,
+      "quantity": 2,
+      "tax_class": "",
+      "subtotal": "0.00",
+      "subtotal_tax": "0.00",
+      "total": "0.00",
+      "total_tax": "0.00",
+      "taxes": [],
+      "meta_data": [],
+      "sku": null,
+      "price": 0
+    },
+    {
+      "id": 38,
+      "name": "",
+      "product_id": 0,
+      "variation_id": 0,
+      "quantity": 1,
+      "tax_class": "",
+      "subtotal": "0.00",
+      "subtotal_tax": "0.00",
+      "total": "0.00",
+      "total_tax": "0.00",
+      "taxes": [],
+      "meta_data": [],
+      "sku": null,
+      "price": 0
+    }
+  ],
+  "tax_lines": [],
+  "shipping_lines": [
+    {
+      "id": 39,
+      "method_title": "Flat Rate",
+      "method_id": "flat_rate",
+      "instance_id": "",
+      "total": "10.00",
+      "total_tax": "0.00",
+      "taxes": [],
+      "meta_data": []
+    }
+  ],
+  "fee_lines": [],
+  "coupon_lines": [],
+  "refunds": [],
+  "currency_symbol": "$",
+  "_links": {
+    "self": [
+      {
+        "href": "https://shoptypewoo.wpcomstaging.com/wp-json/wc/v3/orders/345"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://shoptypewoo.wpcomstaging.com/wp-json/wc/v3/orders"
+      }
+    ]
+  }
+}
