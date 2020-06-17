@@ -16,7 +16,17 @@ type Order struct {
 	DiscountTotal   string          `json:"discount_total"`
 	ShippingTotal   string          `json:"shipping_total"`
 	TotalTax        string          `json:"total_tax"`
+	MetaDataList    []MetaData      `json:"meta_data"`
 }
+
+type MetaData struct {
+	Key   MetaDataKey `json:"key"`
+	Value string      `json:"value"`
+}
+
+type MetaDataKey string
+
+const MetaDataKeyCheckoutUrl = MetaDataKey("checkout_url")
 
 type OrderStatus string
 

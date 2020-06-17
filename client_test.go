@@ -63,3 +63,7 @@ func TestClient_SystemStatus(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
 }
+
+//curl  https://shoptypewoo.wpcomstaging.com/wp-json/wc/v3/orders/345 \
+//-u "ck_b22be12d33b3bee1365fb2776aaff11d6c9d7c9a:cs_11d03e4028aaec811ef45dd1b246250e030fb517" \
+//-H "Content-Type: application/json"
