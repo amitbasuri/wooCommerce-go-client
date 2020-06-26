@@ -39,11 +39,20 @@ type OrderStatus string
 const OrderStatusCompleted = OrderStatus("completed")
 
 type LineItem struct {
-	ID          int    `json:"id"`
-	ProductID   int    `json:"product_id"`
-	VariationID int    `json:"variation_id"`
-	SubTotal    string `json:"subtotal"`
-	Total       string `json:"total"`
+	ID          int           `json:"id"`
+	Name        string        `json:"name"`
+	ProductID   int           `json:"product_id"`
+	VariationID int           `json:"variation_id"`
+	Quantity    int           `json:"quantity"`
+	TaxClass    string        `json:"tax_class"`
+	Subtotal    string        `json:"subtotal"`
+	SubtotalTax string        `json:"subtotal_tax"`
+	Total       string        `json:"total"`
+	TotalTax    string        `json:"total_tax"`
+	Taxes       []interface{} `json:"taxes"`
+	MetaData    []interface{} `json:"meta_data"`
+	Sku         *string       `json:"sku"`
+	Price       float64       `json:"price"`
 }
 
 type Address struct {
