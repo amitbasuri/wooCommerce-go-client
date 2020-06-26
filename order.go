@@ -1,5 +1,11 @@
 package wooCommerce
 
+import (
+	"encoding/json"
+	"io/ioutil"
+	"net/http"
+)
+
 type Order struct {
 	ID              int             `json:"id"`
 	ParentID        int             `json:"parent_id"`
@@ -56,4 +62,45 @@ type ShippingAddress struct {
 	Address
 	Email string `json:"email"`
 	Phone string `json:"phone"`
+}
+
+const OrdersEndpoint = "orders"
+
+func (c *Client) CreateOrder(o *Order) (*Order, error) {
+	params, err := json.Marshal(o)
+	if err == nil {
+		return nil, err
+	}
+	res, err := c.Post(OrdersEndpoint, string(params))
+	if err != nil {
+		return nil, NewError(err, http.StatusInternalServerError)
+	}
+
+	defer res.Body.Close()
+	bodyBytes, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return nil, NewError(err, http.StatusInternalServerError)
+	}
+
+	if res.StatusCode != http.StatusOK {
+		var resErr Error
+		err = json.Unmarshal(bodyBytes, &resErr)
+		if err != nil {
+			return nil, NewError(err, res.StatusCode)
+		}
+		return nil, NewError(resErr, res.StatusCode, resErr.Message)
+	}
+
+	var products []Product
+	err = json.Unmarshal(bodyBytes, &products)
+	if err != nil {
+		return nil, NewError(err, http.StatusInternalServerError, err.Error())
+	}
+
+	_ = &QueryProductsResponse{
+		Products: products,
+		NextPage: nextPage(res.Header, c.NextQueryPageRegexp),
+	}
+	return nil, nil
+
 }

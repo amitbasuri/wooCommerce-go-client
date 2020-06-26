@@ -41,6 +41,9 @@ const ProductVariationsEndpoint = "products/%d/variations"
 
 func (c *Client) QueryProductVariations(productId int, params url.Values) (*QueryProductsVariationResponse, error) {
 
+	params["consumer_key"] = []string{c.Key}
+	params["consumer_secret"] = []string{c.Secret}
+
 	res, err := c.Get(fmt.Sprintf(ProductVariationsEndpoint, productId), params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
