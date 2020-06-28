@@ -30,6 +30,9 @@ type ProductVariation struct {
 	Image            Image                `json:"image"`
 	Attributes       []VariationAttribute `json:"attributes"`
 	TaxStatus        TaxStatus            `json:"tax_status"`
+	ManageStock      bool                 `json:"manage_stock"`
+	StockQuantity    int                  `json:"stock_quantity"`
+	StockStatus      StockStatus          `json:"stock_status"`
 }
 
 type QueryProductsVariationResponse struct {
