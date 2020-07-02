@@ -2,8 +2,10 @@ package wooCommerce
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 )
 
 type Order struct {
@@ -75,12 +77,12 @@ type ShippingAddress struct {
 
 const OrdersEndpoint = "orders"
 
-func (c *Client) CreateOrder(o *Order) (*Order, error) {
-	params, err := json.Marshal(o)
-	if err == nil {
-		return nil, err
-	}
-	res, err := c.Post(OrdersEndpoint, string(params))
+func (c *Client) GetOrder(id int) (*Order, error) {
+	params := url.Values{}
+	params["consumer_key"] = []string{c.Key}
+	params["consumer_secret"] = []string{c.Secret}
+
+	res, err := c.Get(fmt.Sprintf("%s/%d", OrdersEndpoint, id), params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}
@@ -100,16 +102,50 @@ func (c *Client) CreateOrder(o *Order) (*Order, error) {
 		return nil, NewError(resErr, res.StatusCode, resErr.Message)
 	}
 
-	var products []Product
-	err = json.Unmarshal(bodyBytes, &products)
+	var order Order
+	err = json.Unmarshal(bodyBytes, &order)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
-	_ = &QueryProductsResponse{
-		Products: products,
-		NextPage: nextPage(res.Header, c.NextQueryPageRegexp),
-	}
-	return nil, nil
-
+	return &order, nil
 }
+
+//func (c *Client) CreateOrder(o *Order) (*Order, error) {
+//	params, err := json.Marshal(o)
+//	if err == nil {
+//		return nil, err
+//	}
+//	res, err := c.Post(OrdersEndpoint, string(params))
+//	if err != nil {
+//		return nil, NewError(err, http.StatusInternalServerError)
+//	}
+//
+//	defer res.Body.Close()
+//	bodyBytes, err := ioutil.ReadAll(res.Body)
+//	if err != nil {
+//		return nil, NewError(err, http.StatusInternalServerError)
+//	}
+//
+//	if res.StatusCode != http.StatusOK {
+//		var resErr Error
+//		err = json.Unmarshal(bodyBytes, &resErr)
+//		if err != nil {
+//			return nil, NewError(err, res.StatusCode)
+//		}
+//		return nil, NewError(resErr, res.StatusCode, resErr.Message)
+//	}
+//
+//	var products []Product
+//	err = json.Unmarshal(bodyBytes, &products)
+//	if err != nil {
+//		return nil, NewError(err, http.StatusInternalServerError, err.Error())
+//	}
+//
+//	_ = &QueryProductsResponse{
+//		Products: products,
+//		NextPage: nextPage(res.Header, c.NextQueryPageRegexp),
+//	}
+//	return nil, nil
+//
+//}

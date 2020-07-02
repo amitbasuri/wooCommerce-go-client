@@ -1,6 +1,7 @@
 package wooCommerce
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"net/url"
 	"testing"
@@ -68,6 +69,13 @@ func TestClient_SystemStatus(t *testing.T) {
 	assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
 }
 
+func TestClient_GetOrder(t *testing.T) {
+	s, err := testClient.GetOrder(543)
+	assert.NoError(t, err)
+	fmt.Printf("%+v", s)
+	//assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
+}
+
 //curl  https://adamscbd.com/wp-json/wc/v3/products?consumer_key=ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8&consumer_secret=cs_4c6ac24e46437855b8b5eb99118a3b27ff19f61f
 //
 //
@@ -81,3 +89,7 @@ func TestClient_SystemStatus(t *testing.T) {
 //
 //
 //-d samples/order_upadted.json
+
+//https://www.adamscbd.com/wp-json/wc/v3/products?
+//// consumer_key=ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8&
+//// consumer_secret=cs_4c6ac24e46437855b8b5eb99118a3b27ff19f61f
