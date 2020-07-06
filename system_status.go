@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 )
 
 type SystemStatus struct {
@@ -24,8 +25,11 @@ type Settings struct {
 const SystemStatusEndpoint = "system_status"
 
 func (c *Client) SystemStatus() (*SystemStatus, error) {
+	params := url.Values{}
+	params["consumer_key"] = []string{c.Key}
+	params["consumer_secret"] = []string{c.Secret}
 
-	res, err := c.Get(SystemStatusEndpoint, nil)
+	res, err := c.Get(SystemStatusEndpoint, params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

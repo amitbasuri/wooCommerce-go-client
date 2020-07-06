@@ -1,14 +1,19 @@
 package wooCommerce
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"net/url"
 	"testing"
 )
 
 var testClient = NewClient("https://shoptypewoo.wpcomstaging.com/",
-	"ck_0df9f84a48f84e0447e546b2fca6a38a60f2edc2",
-	"cs_dcb9d713e2a695e320bf3c8195e6db12dc82dfd8")
+	"ck_b22be12d33b3bee1365fb2776aaff11d6c9d7c9a",
+	"cs_11d03e4028aaec811ef45dd1b246250e030fb517")
+
+//var testClient = NewClient("https://www.adamscbd.com/",
+//	"ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8",
+//	"cs_4c6ac24e46437855b8b5eb99118a3b27ff19f61f")
 
 //curl https://shoptypewoo.wpcomstaging.com/wp-json/wc/v3/orders/345 \
 //-u ck_0df9f84a48f84e0447e546b2fca6a38a60f2edc2:cs_dcb9d713e2a695e320bf3c8195e6db12dc82dfd8 -d samples/order_upadted.json
@@ -64,6 +69,27 @@ func TestClient_SystemStatus(t *testing.T) {
 	assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
 }
 
-//curl  https://shoptypewoo.wpcomstaging.com/wp-json/wc/v3/orders/345 \
-//-u "ck_b22be12d33b3bee1365fb2776aaff11d6c9d7c9a:cs_11d03e4028aaec811ef45dd1b246250e030fb517" \
+func TestClient_GetOrder(t *testing.T) {
+	s, err := testClient.GetOrder(543)
+	assert.NoError(t, err)
+	fmt.Printf("%+v", s)
+	//assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
+}
+
+//curl  https://adamscbd.com/wp-json/wc/v3/products?consumer_key=ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8&consumer_secret=cs_4c6ac24e46437855b8b5eb99118a3b27ff19f61f
+//
+//
+//
 //-H "Content-Type: application/json"
+//
+//-u "ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8"
+//
+//
+//curl 'https://shoptypewoo.wpcomstaging.com/wp-json/wc/v3/orders/345?consumer_key=ck_0df9f84a48f84e0447e546b2fca6a38a60f2edc2&consumer_secret=cs_dcb9d713e2a695e320bf3c8195e6db12dc82dfd8'
+//
+//
+//-d samples/order_upadted.json
+
+//https://www.adamscbd.com/wp-json/wc/v3/products?
+//// consumer_key=ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8&
+//// consumer_secret=cs_4c6ac24e46437855b8b5eb99118a3b27ff19f61f

@@ -8,6 +8,8 @@ import (
 
 type Client struct {
 	client.Client
+	Key                 string
+	Secret              string
 	NextQueryPageRegexp *regexp.Regexp
 }
 
@@ -26,7 +28,12 @@ func NewClient(hostUrl string, key string, secret string) *Client {
 
 	re := regexp.MustCompile(`\<(.*)\>;.(rel="next")`)
 
-	return &Client{Client: c, NextQueryPageRegexp: re}
+	return &Client{
+		Client:              c,
+		Key:                 key,
+		Secret:              secret,
+		NextQueryPageRegexp: re,
+	}
 
 }
 

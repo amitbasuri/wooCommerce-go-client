@@ -30,6 +30,9 @@ type ProductVariation struct {
 	Image            Image                `json:"image"`
 	Attributes       []VariationAttribute `json:"attributes"`
 	TaxStatus        TaxStatus            `json:"tax_status"`
+	ManageStock      bool                 `json:"manage_stock"`
+	StockQuantity    int                  `json:"stock_quantity"`
+	StockStatus      StockStatus          `json:"stock_status"`
 }
 
 type QueryProductsVariationResponse struct {
@@ -40,6 +43,9 @@ type QueryProductsVariationResponse struct {
 const ProductVariationsEndpoint = "products/%d/variations"
 
 func (c *Client) QueryProductVariations(productId int, params url.Values) (*QueryProductsVariationResponse, error) {
+
+	params["consumer_key"] = []string{c.Key}
+	params["consumer_secret"] = []string{c.Secret}
 
 	res, err := c.Get(fmt.Sprintf(ProductVariationsEndpoint, productId), params)
 	if err != nil {

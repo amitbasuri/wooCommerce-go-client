@@ -59,7 +59,19 @@ type Product struct {
 	Images           []Image            `json:"images"`
 	Attributes       []ProductAttribute `json:"attributes"`
 	TaxStatus        TaxStatus          `json:"tax_status"`
+	ManageStock      bool               `json:"manage_stock"`
+	StockQuantity    int                `json:"stock_quantity"`
+	StockStatus      StockStatus        `json:"stock_status"`
 }
+
+type StockStatus string
+
+//stock_status	string	Controls the stock status of the product.
+//Options: instock, outofstock, onbackorder. Default is instock.
+
+const StockStatusInstock = StockStatus("instock")
+const StockStatusOutofstock = StockStatus("outofstock")
+const StockStatusOnbackorder = StockStatus("onbackorder")
 
 type QueryProductsResponse struct {
 	Products []Product
@@ -67,6 +79,9 @@ type QueryProductsResponse struct {
 }
 
 func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error) {
+
+	params["consumer_key"] = []string{c.Key}
+	params["consumer_secret"] = []string{c.Secret}
 
 	res, err := c.Get(ProductsEndpoint, params)
 	if err != nil {
