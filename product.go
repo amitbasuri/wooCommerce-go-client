@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 const ProductsEndpoint = "products"
@@ -32,6 +33,13 @@ type ProductAttribute struct {
 	Name      string   `json:"name"`
 	Variation bool     `json:"variation"`
 	Options   []string `json:"options"`
+}
+
+type Store struct {
+	Id       int64 `json:"id"`
+	Name     string `json:"name"`
+	ShopName string `json:"shop_name"`
+	Url      string `json:"url"`
 }
 
 type TaxStatus string
@@ -62,6 +70,7 @@ type Product struct {
 	ManageStock      bool               `json:"manage_stock"`
 	StockQuantity    int                `json:"stock_quantity"`
 	StockStatus      StockStatus        `json:"stock_status"`
+	Store            Store              `json:"store"`
 }
 
 type StockStatus string
@@ -82,6 +91,7 @@ func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error
 
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
+	vendors := params["vendor"]
 
 	res, err := c.Get(ProductsEndpoint, params)
 	if err != nil {
@@ -109,10 +119,25 @@ func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error
 		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
+	if len(vendors) > 0 {
+		products = filterByVendor(products, vendors[0])
+	}
+
 	response := &QueryProductsResponse{
 		Products: products,
 		NextPage: nextPage(res.Header, c.NextQueryPageRegexp),
 	}
 	return response, nil
 
+}
+
+func filterByVendor(products []Product, vendor string) []Product {
+	filteredProducts := make([]Product, 0)
+	for _, product := range products {
+		if strings.ToLower(product.Store.ShopName) == strings.ToLower(vendor) {
+			filteredProducts = append(filteredProducts, product)
+		}
+	}
+
+	return filteredProducts
 }
