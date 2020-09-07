@@ -33,6 +33,7 @@ type ProductVariation struct {
 	ManageStock      bool                 `json:"manage_stock"`
 	StockQuantity    int                  `json:"stock_quantity"`
 	StockStatus      StockStatus          `json:"stock_status"`
+	Store            Store                `json:"store"`
 }
 
 type QueryProductsVariationResponse struct {
