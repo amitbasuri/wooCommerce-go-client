@@ -119,7 +119,7 @@ func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error
 		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
-	if len(vendors) > 0 {
+	if len(vendors) > 0 && len(vendors[0]) > 0 {
 		products = filterByVendor(products, vendors[0])
 	}
 
