@@ -34,6 +34,8 @@ type ProductVariation struct {
 	StockQuantity    int                  `json:"stock_quantity"`
 	StockStatus      StockStatus          `json:"stock_status"`
 	Store            Store                `json:"store"`
+	Dimensions       Dimensions           `json:"dimensions"`
+	Weight           string               `json:"weight"`
 }
 
 type QueryProductsVariationResponse struct {

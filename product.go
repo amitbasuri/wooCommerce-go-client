@@ -36,7 +36,7 @@ type ProductAttribute struct {
 }
 
 type Store struct {
-	Id       int64 `json:"id"`
+	Id       int64  `json:"id"`
 	Name     string `json:"name"`
 	ShopName string `json:"shop_name"`
 	Url      string `json:"url"`
@@ -71,6 +71,14 @@ type Product struct {
 	StockQuantity    int                `json:"stock_quantity"`
 	StockStatus      StockStatus        `json:"stock_status"`
 	Store            Store              `json:"store"`
+	Dimensions       Dimensions         `json:"dimensions"`
+	Weight           string             `json:"weight"`
+}
+
+type Dimensions struct {
+	Length string `json:"length"`
+	Width  string `json:"width"`
+	Height string `json:"height"`
 }
 
 type StockStatus string

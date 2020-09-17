@@ -72,7 +72,7 @@ func TestClient_SystemStatus(t *testing.T) {
 func TestClient_GetOrder(t *testing.T) {
 	s, err := testClient.GetOrder(543)
 	assert.NoError(t, err)
-	fmt.Printf("%+v", s)
+	//fmt.Printf("%+v", s)
 	//assert.Equal(t, "https://shoptypewoo.wpcomstaging.com", s.Environment.SiteUrl)
 }
 
@@ -93,3 +93,13 @@ func TestClient_GetOrder(t *testing.T) {
 //https://www.adamscbd.com/wp-json/wc/v3/products?
 //// consumer_key=ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8&
 //// consumer_secret=cs_4c6ac24e46437855b8b5eb99118a3b27ff19f61f
+
+func TestClient_GetSettings(t *testing.T) {
+
+	p, err := testClient.GetSettings(SettingsKeyWeightUnit)
+	assert.NoError(t, err)
+	//for _,v := range p {
+	//	fmt.Printf("+%v\n", v)
+	//}
+	fmt.Printf("+%v\n", p)
+}
