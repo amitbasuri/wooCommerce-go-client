@@ -10,7 +10,7 @@ import (
 const TaxRatesEndPoint = "taxes"
 
 type Tax struct {
-	Id         string `json:"id"`
+	Id         int    `json:"id"`
 	Country    string `json:"country"`
 	State      string `json:"state"`
 	PostalCode string `json:"postalCode"`
