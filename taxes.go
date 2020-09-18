@@ -10,17 +10,17 @@ import (
 const TaxRatesEndPoint = "taxes"
 
 type Tax struct {
-	Id       string `json:"id"`
-	Country  string `json:"country"`
-	State    string `json:"state"`
-	Postcode string `json:"postcode"`
-	City     string `json:"city"`
-	Rate     string `json:"rate"`
-	Name     string `json:"name"`
-	Priority int    `json:"priority"`
-	Compound bool   `json:"compound"`
-	Shipping bool   `json:"shipping"`
-	Class    string `json:"class"`
+	Id         string `json:"id"`
+	Country    string `json:"country"`
+	State      string `json:"state"`
+	PostalCode string `json:"postalCode"`
+	City       string `json:"city"`
+	Rate       string `json:"rate"`
+	Name       string `json:"name"`
+	Priority   int    `json:"priority"`
+	Compound   bool   `json:"compound"`
+	Shipping   bool   `json:"shipping"`
+	Class      string `json:"class"`
 }
 
 func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
@@ -54,14 +54,14 @@ func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
 		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
-	country := params["country"][0]
+	countryCode := params["countryCode"][0]
 	state := params["state"][0]
-	postcode := params["postcode"][0]
+	postalCode := params["postalCode"][0]
 
 	taxes := make([]Tax, 0)
 
 	for _, tax := range allTaxes {
-		if tax.Country == country && tax.State == state && tax.Postcode == postcode {
+		if tax.Country == countryCode && tax.State == state && tax.PostalCode == postalCode {
 			taxes = append(taxes, tax)
 		}
 	}
