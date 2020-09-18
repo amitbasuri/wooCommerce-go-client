@@ -33,8 +33,8 @@ type Order struct {
 }
 
 type MetaData struct {
-	Key   MetaDataKey `json:"key"`
-	Value string      `json:"value"`
+	Key   MetaDataKey `json:"key,omitempty"`
+	Value string      `json:"value,omitempty"`
 }
 
 type MetaDataKey string
@@ -46,20 +46,20 @@ type OrderStatus string
 const OrderStatusCompleted = OrderStatus("completed")
 
 type LineItem struct {
-	ID          int           `json:"id"`
-	Name        string        `json:"name"`
-	ProductID   int           `json:"product_id"`
-	VariationID int           `json:"variation_id"`
-	Quantity    int           `json:"quantity"`
-	TaxClass    string        `json:"tax_class"`
-	Subtotal    string        `json:"subtotal"`
-	SubtotalTax string        `json:"subtotal_tax"`
-	Total       string        `json:"total"`
-	TotalTax    string        `json:"total_tax"`
-	Taxes       []interface{} `json:"taxes"`
-	MetaData    []interface{} `json:"meta_data"`
-	Sku         *string       `json:"sku"`
-	Price       float64       `json:"price"`
+	ID          int           `json:"id,omitempty"`
+	Name        string        `json:"name,omitempty"`
+	ProductID   int           `json:"product_id,omitempty"`
+	VariationID int           `json:"variation_id,omitempty"`
+	Quantity    int           `json:"quantity,omitempty"`
+	TaxClass    string        `json:"tax_class,omitempty"`
+	Subtotal    string        `json:"subtotal,omitempty"`
+	SubtotalTax string        `json:"subtotal_tax,omitempty"`
+	Total       string        `json:"total,omitempty"`
+	TotalTax    string        `json:"total_tax,omitempty"`
+	Taxes       []interface{} `json:"taxes,omitempty"`
+	MetaData    []interface{} `json:"meta_data,omitempty"`
+	Sku         *string       `json:"sku,omitempty"`
+	Price       float64       `json:"price,omitempty"`
 }
 
 type Address struct {
@@ -81,24 +81,24 @@ type ShippingAddress struct {
 }
 
 type TaxLines struct {
-	Compound         bool          `json:"compound"`
-	ID               int64         `json:"id"`
-	RateID           int64         `json:"rate_id"`
-	RateCode         string        `json:"rate_code"`
-	Label            string        `json:"label"`
-	TaxTotal         string        `json:"tax_total"`
-	ShippingTaxTotal string        `json:"shipping_tax_total"`
-	MetaData         []interface{} `json:"meta_data"`
+	Compound         bool          `json:"compound,omitempty"`
+	ID               int64         `json:"id,omitempty"`
+	RateID           int64         `json:"rate_id,omitempty"`
+	RateCode         string        `json:"rate_code,omitempty"`
+	Label            string        `json:"label,omitempty"`
+	TaxTotal         string        `json:"tax_total,omitempty"`
+	ShippingTaxTotal string        `json:"shipping_tax_total,omitempty"`
+	MetaData         []interface{} `json:"meta_data,omitempty"`
 }
 
 type ShippingLines struct {
-	ID          int64         `json:"id"`
-	MethodTitle string        `json:"method_title"`
-	MethodID    string        `json:"method_id"`
-	Total       string        `json:"total"`
-	TotalTax    string        `json:"total_tax"`
-	Taxes       []interface{} `json:"taxes"`
-	MetaData    []interface{} `json:"meta_data"`
+	ID          int64         `json:"id,omitempty"`
+	MethodTitle string        `json:"method_title,omitempty"`
+	MethodID    string        `json:"method_id,omitempty"`
+	Total       string        `json:"total,omitempty"`
+	TotalTax    string        `json:"total_tax,omitempty"`
+	Taxes       []interface{} `json:"taxes,omitempty"`
+	MetaData    []interface{} `json:"meta_data,omitempty"`
 }
 
 const OrdersEndpoint = "orders"
