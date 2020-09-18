@@ -8,8 +8,8 @@ import (
 )
 
 type SystemStatus struct {
-	Environment Environment `json:"environment"`
-	Settings    Settings    `json:"settings"`
+	Environment Environment    `json:"environment"`
+	Settings    SystemSettings `json:"settings"`
 }
 
 type Environment struct {
@@ -17,7 +17,7 @@ type Environment struct {
 	SiteUrl string `json:"site_url"`
 }
 
-type Settings struct {
+type SystemSettings struct {
 	ApiEnabled bool   `json:"api_enabled"`
 	Currency   string `json:"currency"`
 }

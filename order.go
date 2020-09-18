@@ -157,8 +157,6 @@ func (c *Client) CreateOrder(o *Order) (*Order, error) {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}
 
-	fmt.Println(res.Status)
-
 	if res.StatusCode != http.StatusCreated {
 		var resErr Error
 		err = json.Unmarshal(bodyBytes, &resErr)
