@@ -56,12 +56,11 @@ func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
 
 	countryCode := params["countryCode"][0]
 	state := params["state"][0]
-	postalCode := params["postalCode"][0]
 
 	taxes := make([]Tax, 0)
 
 	for _, tax := range allTaxes {
-		if tax.Country == countryCode && tax.State == state && tax.PostalCode == postalCode {
+		if tax.Country == countryCode && tax.State == state {
 			taxes = append(taxes, tax)
 		}
 	}
