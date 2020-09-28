@@ -23,7 +23,38 @@ type Tax struct {
 	Class      string `json:"class"`
 }
 
+type getTaxesResponse struct {
+	Taxes    []Tax
+	NextPage string
+}
+
 func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
+
+	allTaxes := make([]Tax, 0)
+
+	// get all taxes
+	next := "1"
+	for next != "" {
+
+		res, err := c.GetTaxesPaginated(url.Values{
+			string(QueryParamPage): []string{next},
+		})
+		if err != nil {
+			break
+		}
+		allTaxes = append(allTaxes, res.Taxes...)
+		next = res.NextPage
+	}
+
+	countryCode := params["countryCode"][0]
+	state := params["state"][0]
+
+	taxes := filterTaxesByCountryAndState(allTaxes, countryCode, state)
+
+	return taxes, nil
+}
+
+func (c *Client) GetTaxesPaginated(params url.Values) (*getTaxesResponse, error) {
 
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
@@ -48,23 +79,28 @@ func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
 		return nil, NewError(resErr, res.StatusCode, resErr.Message)
 	}
 
-	allTaxes := make([]Tax, 0)
-	err = json.Unmarshal(bodyBytes, &allTaxes)
+	taxes := make([]Tax, 0)
+	err = json.Unmarshal(bodyBytes, &taxes)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
-	countryCode := params["countryCode"][0]
-	state := params["state"][0]
-	postalCode := params["postalCode"][0]
+	response := &getTaxesResponse{
+		Taxes:    taxes,
+		NextPage: nextPage(res.Header, c.NextQueryPageRegexp),
+	}
+	return response, nil
+}
+
+func filterTaxesByCountryAndState(taxesList []Tax, countryCode, state string) []Tax {
 
 	taxes := make([]Tax, 0)
 
-	for _, tax := range allTaxes {
-		if tax.Country == countryCode && tax.State == state && tax.PostalCode == postalCode {
+	for _, tax := range taxesList {
+		if tax.Country == countryCode && tax.State == state {
 			taxes = append(taxes, tax)
 		}
 	}
 
-	return taxes, nil
+	return taxes
 }
