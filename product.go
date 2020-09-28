@@ -101,6 +101,8 @@ func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error
 	params["consumer_secret"] = []string{c.Secret}
 	vendors := params["vendor"]
 
+	delete(params, "vendor")
+
 	res, err := c.Get(ProductsEndpoint, params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
