@@ -44,6 +44,7 @@ const MetaDataKeyCheckoutUrl = MetaDataKey("checkout_url")
 type OrderStatus string
 
 const OrderStatusCompleted = OrderStatus("completed")
+const OrderStatusOnHold = OrderStatus("on-hold")
 
 type LineItem struct {
 	ID          int           `json:"id,omitempty"`
