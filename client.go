@@ -13,7 +13,15 @@ type Client struct {
 	NextQueryPageRegexp *regexp.Regexp
 }
 
-func NewClient(hostUrl string, key string, secret string) *Client {
+func NewClient(hostUrl string, key string, secret string, isCoCart bool) *Client {
+	var version string
+
+	if isCoCart {
+		version = "cocart/v1"
+	} else {
+		version = "wc/v3"
+	}
+
 	factory := client.Factory{}
 	c := factory.NewClient(options.Basic{
 		URL:    hostUrl,
@@ -22,7 +30,7 @@ func NewClient(hostUrl string, key string, secret string) *Client {
 		Options: options.Advanced{
 			WPAPI:       true,
 			WPAPIPrefix: "/wp-json/",
-			Version:     "wc/v3",
+			Version:     version,
 		},
 	})
 
