@@ -22,8 +22,14 @@ type CalculateShippingParam struct {
 }
 
 type ShippingResponse struct {
-	Cost string `json:"cost"`
-	Html string `json:"html"`
+	Key          string        `json:"key"`
+	MethodID     string        `json:"method_id"`
+	InstanceID   int           `json:"instance_id"`
+	Label        string        `json:"label"`
+	Cost         string        `json:"cost"`
+	HTML         string        `json:"html"`
+	Taxes        []interface{} `json:"taxes"`
+	ChosenMethod bool          `json:"chosen_method"`
 }
 
 const shippingEndpoint = "calculate/shipping"
@@ -40,8 +46,12 @@ func (c *Client) CalculateShipping(shipping Shipping) (*ShippingResponse, error)
 		return nil, err
 	}
 
+	cartResponse, err := c.addToCart(shipping)
+	if err != nil {
+		return nil, err
+	}
 
-	response, err := c.Post(shippingEndpoint, string(params), nil)
+	response, err := c.Post(shippingEndpoint, string(params), cartResponse.Cookies())
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}
@@ -63,17 +73,13 @@ func (c *Client) CalculateShipping(shipping Shipping) (*ShippingResponse, error)
 
 	shippingResponse := &ShippingResponse{}
 
-	responseMap := make(map[string]interface{})
+	responseMap := make(map[string]*ShippingResponse)
 	if err := json.Unmarshal(bodyBytes, &responseMap); err != nil {
 		return nil, NewError(err, http.StatusInternalServerError, "error unmarshalling order response")
 	}
 
-	if val, ok := responseMap["cost"]; ok {
-		shippingResponse.Cost = val.(string)
-	}
-
-	if val, ok := responseMap["html"]; ok {
-		shippingResponse.Cost = val.(string)
+	for _, respMap := range responseMap {
+		shippingResponse = respMap
 	}
 
 	return shippingResponse, nil

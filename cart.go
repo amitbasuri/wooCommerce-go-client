@@ -2,43 +2,38 @@ package wooCommerce
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"net/http"
+	"strconv"
 )
 
+const addToCartEndpoint = "add-item"
 
+type addToCartParam struct {
+	ProductId   string `json:"product_id"`
+	Quantity    string `json:"quantity"`
+	VariationID int    `json:"variation_id"`
+}
 
-func (c *Client) addToCart() {
-	var orderResponse Order
+func (c *Client) addToCart(shipping Shipping) (*http.Response, error) {
 
-	params, err := json.Marshal(orderResponse)
-	if err != nil {
-
+	addToCartParam := addToCartParam{
+		ProductId:   shipping.SourceId,
+		Quantity:    strconv.Itoa(int(shipping.Quantity)),
 	}
 
-	res, err := c.Post(OrdersEndpoint, string(params), nil)
-	if err != nil {
-
-	}
-
-	defer res.Body.Close()
-	bodyBytes, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-
-	}
-
-	if res.StatusCode != http.StatusCreated {
-		var resErr Error
-		err = json.Unmarshal(bodyBytes, &resErr)
+	if len(shipping.ProductVariantId) > 0 {
+		variantID, err := strconv.Atoi(shipping.ProductVariantId)
 		if err != nil {
-
+			return nil, err
 		}
 
+		addToCartParam.VariationID = variantID
 	}
 
-	if err := json.Unmarshal(bodyBytes, &orderResponse); err != nil {
-
+	params, err := json.Marshal(&addToCartParam)
+	if err != nil {
+		return nil, err
 	}
 
-
+	return c.Post(addToCartEndpoint, string(params), nil)
 }

@@ -81,9 +81,9 @@ func (c *Client) getURL(endpoint string, parameters url.Values) (string, error) 
 	return slug.String(), nil
 }
 
-func (c *Client) setHeaderCookie(request *http.Request, cookies []*http.Cookie) {
+func setHeaderCookie(request *http.Request, cookies []*http.Cookie) {
 	for _, cookie := range cookies {
-		request.Header.Set(cookieHeader, cookie.Value)
+		request.AddCookie(cookie)
 	}
 }
 
@@ -106,13 +106,20 @@ func (c *Client) Post(endpoint string, json string, cookies []*http.Cookie) (*ht
 
 	payload := bytes.NewReader([]byte(json))
 
+	parameters := url.Values{"consumer_key": []string{c.Key}, "consumer_secret": []string{c.Secret}}
+
+	endpoint, err := c.getURL(endpoint, parameters)
+	if err != nil {
+		return nil, err
+	}
+
 	request, err := http.NewRequest("POST", endpoint, payload)
 	if err != nil {
 		return nil, err
 	}
 
 	if cookies != nil {
-		c.setHeaderCookie(request, cookies)
+		setHeaderCookie(request, cookies)
 	}
 
 	return c.sendRequest(request)
