@@ -1,6 +1,7 @@
 package wooCommerce
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/stretchr/testify/assert"
 	"net/url"
@@ -103,4 +104,28 @@ func TestClient_GetSettings(t *testing.T) {
 	//	fmt.Printf("+%v\n", v)
 	//}
 	fmt.Printf("+%v\n", p)
+}
+
+func TestClient_CalculateShipping(t *testing.T) {
+	shipping := Shipping{
+		ProductVariantId: "",
+		SourceId:         "614",
+		Quantity:         1,
+		CountryCode:      "US",
+	}
+
+	_, err := testClient.CalculateShipping(shipping)
+
+	assert.NoError(t, err)
+}
+
+func TestClient_CreateOrder(t *testing.T) {
+
+	order := Order{}
+	err := json.Unmarshal([]byte("{ \"payment_method\": \"bacs\",\n        \"payment_method_title\": \"Direct Bank Transfer\",\n        \"set_paid\": true,\n        \"billing\": {\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"address_1\": \"969 Market\",\n            \"address_2\": \"\",\n            \"city\": \"San Francisco\",\n            \"state\": \"CA\",\n            \"postcode\": \"94103\",\n            \"country\": \"US\",\n            \"email\": \"john.doe@example.com\",\n            \"phone\": \"(555) 555-5555\"\n        },\n        \"shipping\": {\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"address_1\": \"969 Market\",\n            \"address_2\": \"\",\n            \"city\": \"San Francisco\",\n            \"state\": \"CA\",\n            \"postcode\": \"94103\",\n            \"country\": \"US\"\n        },\n        \"line_items\": [\n            {\n                \"product_id\": 287,\n                \"quantity\": 2\n            }\n        ]}"), &order)
+
+
+	_, err = testClient.CreateOrder(&order)
+
+	assert.NoError(t, err)
 }
