@@ -16,7 +16,7 @@ func (c *Client) addToCart() {
 
 	}
 
-	res, err := c.Post(OrdersEndpoint, string(params))
+	res, err := c.Post(OrdersEndpoint, string(params), nil)
 	if err != nil {
 
 	}

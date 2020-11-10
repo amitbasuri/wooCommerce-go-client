@@ -147,7 +147,7 @@ func (c *Client) CreateOrder(o *Order) (*Order, error) {
 		return nil, err
 	}
 
-	res, err := c.Post(OrdersEndpoint, string(params))
+	res, err := c.Post(OrdersEndpoint, string(params), nil)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

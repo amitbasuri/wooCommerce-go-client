@@ -41,7 +41,7 @@ func (c *Client) CalculateShipping(shipping Shipping) (*ShippingResponse, error)
 	}
 
 
-	response, err := c.Post(shippingEndpoint, string(params))
+	response, err := c.Post(shippingEndpoint, string(params), nil)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

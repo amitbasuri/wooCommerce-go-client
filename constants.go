@@ -7,5 +7,6 @@ const unauthorized = "unauthorized"
 const accept = "accept"
 const origin = "origin"
 const all string = "*"
+const cookieHeader = "Cookie"
 
 const wpAPIPrefix = "/wp-json/"
