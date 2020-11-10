@@ -32,7 +32,7 @@ type ShippingResponse struct {
 	ChosenMethod bool          `json:"chosen_method"`
 }
 
-const shippingEndpoint = "calculate/shipping"
+const shippingEndpoint = "cocart/v1/calculate/shipping"
 
 func (c *Client) CalculateShipping(shipping Shipping) (*ShippingResponse, error) {
 

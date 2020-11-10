@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-const addToCartEndpoint = "add-item"
+const addToCartEndpoint = "cocart/v1/add-item"
 
 type addToCartParam struct {
 	ProductId   string `json:"product_id"`

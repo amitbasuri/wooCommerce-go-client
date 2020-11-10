@@ -22,7 +22,7 @@ type SystemSettings struct {
 	Currency   string `json:"currency"`
 }
 
-const SystemStatusEndpoint = "system_status"
+const SystemStatusEndpoint = "wc/v3/system_status"
 
 func (c *Client) SystemStatus() (*SystemStatus, error) {
 	params := url.Values{}

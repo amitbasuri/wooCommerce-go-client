@@ -102,7 +102,7 @@ type ShippingLines struct {
 	MetaData    []interface{} `json:"meta_data,omitempty"`
 }
 
-const OrdersEndpoint = "orders"
+const OrdersEndpoint = "wc/v3/orders"
 
 func (c *Client) GetOrder(id int) (*Order, error) {
 	params := url.Values{}

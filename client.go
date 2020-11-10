@@ -16,14 +16,7 @@ type Client struct {
 	HTTPClient          *http.Client
 }
 
-func NewClient(hostUrl string, key string, secret string, isCoCart bool) *Client {
-	var version string
-
-	if isCoCart {
-		version = "cocart/v1/"
-	} else {
-		version = "wc/v3/"
-	}
+func NewClient(hostUrl string, key string, secret string) *Client {
 
 	re := regexp.MustCompile(`\<(.*)\>;.(rel="next")`)
 
@@ -37,13 +30,13 @@ func NewClient(hostUrl string, key string, secret string, isCoCart bool) *Client
 		},
 	}
 
-	newClient.setHostURL(version)
+	newClient.setHostURL()
 
 	return newClient
 }
 
-func (c *Client) setHostURL(version string) {
-	c.HostURL = c.HostURL + wpAPIPrefix + version
+func (c *Client) setHostURL() {
+	c.HostURL = c.HostURL + wpAPIPrefix
 }
 
 func (c *Client) sendRequest(request *http.Request) (*http.Response, error) {
