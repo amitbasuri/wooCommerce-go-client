@@ -9,7 +9,7 @@ import (
 
 var testClient = NewClient("https://shoptypewoo.wpcomstaging.com/",
 	"ck_b22be12d33b3bee1365fb2776aaff11d6c9d7c9a",
-	"cs_11d03e4028aaec811ef45dd1b246250e030fb517")
+	"cs_11d03e4028aaec811ef45dd1b246250e030fb517", false)
 
 //var testClient = NewClient("https://www.adamscbd.com/",
 //	"ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8",
