@@ -6,14 +6,18 @@ import (
 	"net/http"
 )
 
-type Shipping struct {
+type ShippingCart struct {
+	CountryCode string     `json:"country_code"`
+	CartLines   []CartLine `json:"cart_lines"`
+}
+
+type CartLine struct {
 	ProductVariantId string            `json:"product_variant_id"`
 	SourceId         string            `json:"source_id"`
 	Quantity         uint              `json:"quantity"`
 	Name             string            `json:"name"`
 	Price            float64           `json:"price"`
 	VariantNameValue map[string]string `json:"variant_name_value"`
-	CountryCode      string            `json:"country_code"`
 }
 
 type CalculateShippingParam struct {
@@ -34,10 +38,10 @@ type ShippingResponse struct {
 
 const shippingEndpoint = "cocart/v1/calculate/shipping"
 
-func (c *Client) CalculateShipping(shipping Shipping) (*ShippingResponse, error) {
+func (c *Client) CalculateShipping(shippingCart ShippingCart) (*ShippingResponse, error) {
 
 	calculateShippingParam := CalculateShippingParam{
-		Country:       shipping.CountryCode,
+		Country:       shippingCart.CountryCode,
 		ReturnMethods: true,
 	}
 
@@ -46,12 +50,12 @@ func (c *Client) CalculateShipping(shipping Shipping) (*ShippingResponse, error)
 		return nil, err
 	}
 
-	cartResponse, err := c.addToCart(shipping)
+	cookies, err := c.addToCart(shippingCart)
 	if err != nil {
 		return nil, err
 	}
 
-	response, err := c.Post(shippingEndpoint, string(params), cartResponse.Cookies())
+	response, err := c.Post(shippingEndpoint, string(params), cookies)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}
