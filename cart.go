@@ -38,7 +38,7 @@ func (c *Client) addToCart(shippingCart ShippingCart) ([]*http.Cookie, error) {
 			return nil, err
 		}
 
-		response, err := c.Post(addToCartEndpoint, string(params), nil)
+		response, err := c.Post(addToCartEndpoint, string(params), cookies)
 		if err != nil {
 			return nil, err
 		}
