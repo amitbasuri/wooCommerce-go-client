@@ -145,7 +145,6 @@ func TestClient_CreateOrder(t *testing.T) {
 func TestClient_Webhook(t *testing.T) {
 
 	webhook := &Webhook{
-		ID:          0,
 		Name:        "Test Webhook Automation",
 		Topic:       WebhookTopicProductDeleted,
 		DeliveryURL: "https://example.com",

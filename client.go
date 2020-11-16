@@ -156,7 +156,8 @@ type HeaderKey string
 const (
 	HeaderKeyTotalPages HeaderKey = "X-Wp-Totalpages"
 	HeaderKeyTotal      HeaderKey = "X-Wp-Total"
-	HeaderLink          HeaderKey = "Link"
+	HeaderKeyLink       HeaderKey = "Link"
+	HeaderKeySource     HeaderKey = "X-Wc-Webhook-Source"
 )
 
 type QueryParam string

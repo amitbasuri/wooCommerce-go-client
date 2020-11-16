@@ -8,7 +8,7 @@ import (
 )
 
 func nextPage(header http.Header, re *regexp.Regexp) string {
-	headerLink := header.Get(string(HeaderLink))
+	headerLink := header.Get(string(HeaderKeyLink))
 	if headerLink == "" {
 		return ""
 	}
