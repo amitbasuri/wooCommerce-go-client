@@ -18,7 +18,7 @@ const WebhookTopicProductUpdated = "product.updated"
 const WebhookTopicProductDeleted = "product.deleted"
 
 type Webhook struct {
-	ID          int          `json:"id"`
+	ID          int          `json:"id,omitempty"`
 	Name        string       `json:"name"`
 	Topic       WebhookTopic `json:"topic"`
 	DeliveryURL string       `json:"delivery_url"`
