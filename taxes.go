@@ -7,7 +7,7 @@ import (
 	"net/url"
 )
 
-const TaxRatesEndPoint = "taxes"
+const TaxRatesEndPoint = "wc/v3/taxes"
 
 type Tax struct {
 	Id         int    `json:"id"`

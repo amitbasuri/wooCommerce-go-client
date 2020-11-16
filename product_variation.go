@@ -43,7 +43,7 @@ type QueryProductsVariationResponse struct {
 	NextPage   string
 }
 
-const ProductVariationsEndpoint = "products/%d/variations"
+const ProductVariationsEndpoint = "wc/v3/products/%d/variations"
 
 func (c *Client) QueryProductVariations(productId int, params url.Values) (*QueryProductsVariationResponse, error) {
 

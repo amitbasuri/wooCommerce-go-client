@@ -9,8 +9,8 @@ import (
 
 type SettingsKey string
 
-const SettingsKeyWeightUnit = SettingsKey("settings/products/woocommerce_weight_unit")
-const SettingsKeyDimensionUnit = SettingsKey("settings/products/woocommerce_dimension_unit")
+const SettingsKeyWeightUnit = SettingsKey("wc/v3/settings/products/woocommerce_weight_unit")
+const SettingsKeyDimensionUnit = SettingsKey("wc/v3/settings/products/woocommerce_dimension_unit")
 
 type Setting struct {
 	ID          string      `json:"id"`

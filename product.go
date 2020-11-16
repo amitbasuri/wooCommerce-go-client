@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const ProductsEndpoint = "products"
+const ProductsEndpoint = "wc/v3/products"
 
 type ProductType string
 
