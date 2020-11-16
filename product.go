@@ -49,6 +49,7 @@ const TaxStatusTaxable = TaxStatus("taxable")
 type Status string
 
 const StatusPublish = Status("publish")
+const StatusTrash = Status("trash")
 
 type Product struct {
 	ID               int                `json:"id"`
@@ -95,7 +96,7 @@ type QueryProductsResponse struct {
 	NextPage string
 }
 
-func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error) {
+func (c *clientImpl) QueryProducts(params url.Values) (*QueryProductsResponse, error) {
 
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
@@ -103,7 +104,7 @@ func (c *Client) QueryProducts(params url.Values) (*QueryProductsResponse, error
 
 	delete(params, "vendor")
 
-	res, err := c.Get(ProductsEndpoint, params)
+	res, err := c.get(ProductsEndpoint, params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

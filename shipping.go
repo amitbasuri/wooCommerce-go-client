@@ -38,7 +38,7 @@ type ShippingResponse struct {
 
 const shippingEndpoint = "cocart/v1/calculate/shipping"
 
-func (c *Client) CalculateShipping(shippingCart ShippingCart) (*ShippingResponse, error) {
+func (c *clientImpl) CalculateShipping(shippingCart ShippingCart) (*ShippingResponse, error) {
 
 	calculateShippingParam := CalculateShippingParam{
 		Country:       shippingCart.CountryCode,
@@ -55,7 +55,7 @@ func (c *Client) CalculateShipping(shippingCart ShippingCart) (*ShippingResponse
 		return nil, err
 	}
 
-	response, err := c.Post(shippingEndpoint, string(params), cookies)
+	response, err := c.post(shippingEndpoint, string(params), cookies)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

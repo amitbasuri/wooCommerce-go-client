@@ -2,7 +2,6 @@ package wooCommerce
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/stretchr/testify/assert"
 	"net/url"
 	"testing"
@@ -11,6 +10,11 @@ import (
 var testClient = NewClient("https://shoptypewoo.wpcomstaging.com/",
 	"ck_b22be12d33b3bee1365fb2776aaff11d6c9d7c9a",
 	"cs_11d03e4028aaec811ef45dd1b246250e030fb517")
+
+//sheco
+//var testClient = NewClient("https://92e4d4c2aa.nxcli.net//",
+//	"ck_074cce977c850baa46442020de88c52b6dbe7032",
+//	"cs_367678b1f5c805fb011363e85c967de9bba578b9")
 
 //var testClient = NewClient("https://www.adamscbd.com/",
 //	"ck_8ba6fba964c8883cfa4deb2a80cb670ac7ad1cc8",
@@ -98,12 +102,11 @@ func TestClient_GetOrder(t *testing.T) {
 
 func TestClient_GetSettings(t *testing.T) {
 
-	p, err := testClient.GetSettings(SettingsKeyWeightUnit)
+	_, err := testClient.GetSettings(SettingsKeyWeightUnit)
 	assert.NoError(t, err)
 	//for _,v := range p {
 	//	fmt.Printf("+%v\n", v)
 	//}
-	fmt.Printf("+%v\n", p)
 }
 
 func TestClient_CalculateShipping(t *testing.T) {
@@ -137,4 +140,21 @@ func TestClient_CreateOrder(t *testing.T) {
 	_, err = testClient.CreateOrder(&order)
 
 	assert.NoError(t, err)
+}
+
+func TestClient_Webhook(t *testing.T) {
+
+	webhook := &Webhook{
+		ID:          0,
+		Name:        "Test Webhook Automation",
+		Topic:       WebhookTopicProductDeleted,
+		DeliveryURL: "https://example.com",
+	}
+
+	err := testClient.CreateWebhook(webhook)
+	assert.NoError(t, err)
+
+	err = testClient.DeleteWebhook(webhook.ID, true)
+	assert.NoError(t, err)
+
 }

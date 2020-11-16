@@ -14,7 +14,7 @@ type addToCartParam struct {
 	VariationID int    `json:"variation_id"`
 }
 
-func (c *Client) addToCart(shippingCart ShippingCart) ([]*http.Cookie, error) {
+func (c *clientImpl) addToCart(shippingCart ShippingCart) ([]*http.Cookie, error) {
 
 	cookies := make([]*http.Cookie, 0)
 
@@ -38,7 +38,7 @@ func (c *Client) addToCart(shippingCart ShippingCart) ([]*http.Cookie, error) {
 			return nil, err
 		}
 
-		response, err := c.Post(addToCartEndpoint, string(params), cookies)
+		response, err := c.post(addToCartEndpoint, string(params), cookies)
 		if err != nil {
 			return nil, err
 		}

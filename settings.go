@@ -24,12 +24,12 @@ type Setting struct {
 	GroupID     string      `json:"group_id"`
 }
 
-func (c *Client) GetSettings(key SettingsKey) (*Setting, error) {
+func (c *clientImpl) GetSettings(key SettingsKey) (*Setting, error) {
 	params := url.Values{}
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
 
-	res, err := c.Get(string(key), params)
+	res, err := c.get(string(key), params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

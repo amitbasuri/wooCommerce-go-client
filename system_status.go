@@ -24,12 +24,12 @@ type SystemSettings struct {
 
 const SystemStatusEndpoint = "wc/v3/system_status"
 
-func (c *Client) SystemStatus() (*SystemStatus, error) {
+func (c *clientImpl) SystemStatus() (*SystemStatus, error) {
 	params := url.Values{}
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
 
-	res, err := c.Get(SystemStatusEndpoint, params)
+	res, err := c.get(SystemStatusEndpoint, params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

@@ -28,7 +28,7 @@ type getTaxesResponse struct {
 	NextPage string
 }
 
-func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
+func (c *clientImpl) GetTaxes(params url.Values) ([]Tax, error) {
 
 	allTaxes := make([]Tax, 0)
 
@@ -54,12 +54,12 @@ func (c *Client) GetTaxes(params url.Values) ([]Tax, error) {
 	return taxes, nil
 }
 
-func (c *Client) GetTaxesPaginated(params url.Values) (*getTaxesResponse, error) {
+func (c *clientImpl) GetTaxesPaginated(params url.Values) (*getTaxesResponse, error) {
 
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
 
-	res, err := c.Get(TaxRatesEndPoint, params)
+	res, err := c.get(TaxRatesEndPoint, params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}

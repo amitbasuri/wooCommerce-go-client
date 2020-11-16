@@ -8,7 +8,21 @@ import (
 	"time"
 )
 
-type Client struct {
+type Client interface {
+	GetTaxes(params url.Values) ([]Tax, error)
+	GetTaxesPaginated(params url.Values) (*getTaxesResponse, error)
+	GetOrder(id int) (*Order, error)
+	CreateOrder(o *Order) (*Order, error)
+	SystemStatus() (*SystemStatus, error)
+	GetSettings(key SettingsKey) (*Setting, error)
+	QueryProductVariations(productId int, params url.Values) (*QueryProductsVariationResponse, error)
+	QueryProducts(params url.Values) (*QueryProductsResponse, error)
+	CreateWebhook(w *Webhook) error
+	DeleteWebhook(id int, force bool) error
+	CalculateShipping(shippingCart ShippingCart) (*ShippingResponse, error)
+}
+
+type clientImpl struct {
 	HostURL             string
 	Key                 string
 	Secret              string
@@ -16,17 +30,17 @@ type Client struct {
 	HTTPClient          *http.Client
 }
 
-func NewClient(hostUrl string, key string, secret string) *Client {
+func NewClient(hostUrl string, key string, secret string) Client {
 
 	re := regexp.MustCompile(`\<(.*)\>;.(rel="next")`)
 
-	newClient := &Client{
+	newClient := &clientImpl{
 		Key:                 key,
 		Secret:              secret,
 		NextQueryPageRegexp: re,
 		HostURL:             hostUrl,
 		HTTPClient: &http.Client{
-			Timeout: 5 * time.Minute,
+			Timeout: 1 * time.Minute,
 		},
 	}
 
@@ -35,11 +49,11 @@ func NewClient(hostUrl string, key string, secret string) *Client {
 	return newClient
 }
 
-func (c *Client) setHostURL() {
+func (c *clientImpl) setHostURL() {
 	c.HostURL = c.HostURL + wpAPIPrefix
 }
 
-func (c *Client) sendRequest(request *http.Request) (*http.Response, error) {
+func (c *clientImpl) sendRequest(request *http.Request) (*http.Response, error) {
 
 	request.Header.Set(contentTypeHeader, applicationJson)
 	request.SetBasicAuth(c.Key, c.Secret)
@@ -47,7 +61,7 @@ func (c *Client) sendRequest(request *http.Request) (*http.Response, error) {
 	return c.HTTPClient.Do(request)
 }
 
-func (c *Client) getURL(endpoint string, parameters url.Values) (string, error) {
+func (c *clientImpl) getURL(endpoint string, parameters url.Values) (string, error) {
 	wcURL, err := url.Parse(c.HostURL + endpoint)
 	if err != nil {
 		return "", err
@@ -80,7 +94,7 @@ func setHeaderCookie(request *http.Request, cookies []*http.Cookie) {
 	}
 }
 
-func (c *Client) Get(endpoint string, parameters url.Values) (*http.Response, error) {
+func (c *clientImpl) get(endpoint string, parameters url.Values) (*http.Response, error) {
 
 	endpoint, err := c.getURL(endpoint, parameters)
 	if err != nil {
@@ -95,7 +109,7 @@ func (c *Client) Get(endpoint string, parameters url.Values) (*http.Response, er
 	return c.sendRequest(request)
 }
 
-func (c *Client) Post(endpoint string, json string, cookies []*http.Cookie) (*http.Response, error) {
+func (c *clientImpl) post(endpoint string, json string, cookies []*http.Cookie) (*http.Response, error) {
 
 	payload := bytes.NewReader([]byte(json))
 
@@ -113,6 +127,25 @@ func (c *Client) Post(endpoint string, json string, cookies []*http.Cookie) (*ht
 
 	if cookies != nil {
 		setHeaderCookie(request, cookies)
+	}
+
+	return c.sendRequest(request)
+}
+
+func (c *clientImpl) delete(endpoint string, body []byte) (*http.Response, error) {
+
+	payload := bytes.NewReader(body)
+
+	parameters := url.Values{"consumer_key": []string{c.Key}, "consumer_secret": []string{c.Secret}}
+
+	endpoint, err := c.getURL(endpoint, parameters)
+	if err != nil {
+		return nil, err
+	}
+
+	request, err := http.NewRequest("DELETE", endpoint, payload)
+	if err != nil {
+		return nil, err
 	}
 
 	return c.sendRequest(request)

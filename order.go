@@ -104,12 +104,12 @@ type ShippingLines struct {
 
 const OrdersEndpoint = "wc/v3/orders"
 
-func (c *Client) GetOrder(id int) (*Order, error) {
+func (c *clientImpl) GetOrder(id int) (*Order, error) {
 	params := url.Values{}
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
 
-	res, err := c.Get(fmt.Sprintf("%s/%d", OrdersEndpoint, id), params)
+	res, err := c.get(fmt.Sprintf("%s/%d", OrdersEndpoint, id), params)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}
@@ -138,7 +138,7 @@ func (c *Client) GetOrder(id int) (*Order, error) {
 	return &order, nil
 }
 
-func (c *Client) CreateOrder(o *Order) (*Order, error) {
+func (c *clientImpl) CreateOrder(o *Order) (*Order, error) {
 
 	var orderResponse Order
 
@@ -147,7 +147,7 @@ func (c *Client) CreateOrder(o *Order) (*Order, error) {
 		return nil, err
 	}
 
-	res, err := c.Post(OrdersEndpoint, string(params), nil)
+	res, err := c.post(OrdersEndpoint, string(params), nil)
 	if err != nil {
 		return nil, NewError(err, http.StatusInternalServerError)
 	}
