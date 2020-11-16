@@ -10,7 +10,7 @@ import (
 
 type Client interface {
 	GetTaxes(params url.Values) ([]Tax, error)
-	GetTaxesPaginated(params url.Values) (*getTaxesResponse, error)
+	GetTaxesPaginated(params url.Values) (*GetTaxesResponse, error)
 	GetOrder(id int) (*Order, error)
 	CreateOrder(o *Order) (*Order, error)
 	SystemStatus() (*SystemStatus, error)

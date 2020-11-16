@@ -23,7 +23,7 @@ type Tax struct {
 	Class      string `json:"class"`
 }
 
-type getTaxesResponse struct {
+type GetTaxesResponse struct {
 	Taxes    []Tax
 	NextPage string
 }
@@ -54,7 +54,7 @@ func (c *clientImpl) GetTaxes(params url.Values) ([]Tax, error) {
 	return taxes, nil
 }
 
-func (c *clientImpl) GetTaxesPaginated(params url.Values) (*getTaxesResponse, error) {
+func (c *clientImpl) GetTaxesPaginated(params url.Values) (*GetTaxesResponse, error) {
 
 	params["consumer_key"] = []string{c.Key}
 	params["consumer_secret"] = []string{c.Secret}
@@ -85,7 +85,7 @@ func (c *clientImpl) GetTaxesPaginated(params url.Values) (*getTaxesResponse, er
 		return nil, NewError(err, http.StatusInternalServerError, err.Error())
 	}
 
-	response := &getTaxesResponse{
+	response := &GetTaxesResponse{
 		Taxes:    taxes,
 		NextPage: nextPage(res.Header, c.NextQueryPageRegexp),
 	}
