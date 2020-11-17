@@ -40,6 +40,7 @@ type MetaData struct {
 type MetaDataKey string
 
 const MetaDataKeyCheckoutUrl = MetaDataKey("checkout_url")
+const MetaDataKeyCheckoutId = MetaDataKey("checkout_id")
 
 type OrderStatus string
 
