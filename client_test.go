@@ -153,6 +153,10 @@ func TestClient_Webhook(t *testing.T) {
 	err := testClient.CreateWebhook(webhook)
 	assert.NoError(t, err)
 
+	w, err := testClient.QueryWebhooks(&webhook.DeliveryURL)
+	assert.NoError(t, err)
+	assert.Equal(t, webhook.DeliveryURL, w[0].DeliveryURL)
+
 	err = testClient.DeleteWebhook(webhook.ID, true)
 	assert.NoError(t, err)
 

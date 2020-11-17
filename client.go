@@ -20,6 +20,7 @@ type Client interface {
 	CreateWebhook(w *Webhook) error
 	DeleteWebhook(id int, force bool) error
 	CalculateShipping(shippingCart ShippingCart) (*ShippingResponse, error)
+	QueryWebhooks(deliveryUrl *string) ([]Webhook, error)
 }
 
 type clientImpl struct {
@@ -95,6 +96,13 @@ func setHeaderCookie(request *http.Request, cookies []*http.Cookie) {
 }
 
 func (c *clientImpl) get(endpoint string, parameters url.Values) (*http.Response, error) {
+
+	if parameters == nil {
+		parameters = make(map[string][]string)
+	}
+
+	parameters["consumer_key"] = []string{c.Key}
+	parameters["consumer_secret"] = []string{c.Secret}
 
 	endpoint, err := c.getURL(endpoint, parameters)
 	if err != nil {
