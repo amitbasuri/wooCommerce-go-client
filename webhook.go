@@ -105,20 +105,16 @@ func (c *clientImpl) QueryWebhooks(deliveryUrl *string) ([]Webhook, error) {
 
 		res, nextPage, err := c.queryWebhooksPaginated(url.Values{
 			string(QueryParamPage): []string{next},
+			"status":               []string{WebhookStatusActive},
 		})
 
 		if err != nil {
 			return nil, err
 		}
 
-		for _, webhook := range res {
-			if deliveryUrl != nil {
-				if webhook.DeliveryURL == *deliveryUrl &&
-					webhook.Status == WebhookStatusActive {
-					allWebhooks = append(allWebhooks, webhook)
-				}
-			} else {
-				if webhook.Status == WebhookStatusActive {
+		if deliveryUrl != nil {
+			for _, webhook := range res {
+				if webhook.DeliveryURL == *deliveryUrl {
 					allWebhooks = append(allWebhooks, webhook)
 				}
 			}
