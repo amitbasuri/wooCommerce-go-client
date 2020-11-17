@@ -18,11 +18,18 @@ const WebhookTopicProductCreated = "product.created"
 const WebhookTopicProductUpdated = "product.updated"
 const WebhookTopicProductDeleted = "product.deleted"
 
+type WebhookStatus string
+
+const WebhookStatusActive = "active"
+const WebhookStatusPaused = "paused"
+const WebhookStatusDisabled = "disabled"
+
 type Webhook struct {
-	ID          int          `json:"id,omitempty"`
-	Name        string       `json:"name"`
-	Topic       WebhookTopic `json:"topic"`
-	DeliveryURL string       `json:"delivery_url"`
+	ID          int           `json:"id,omitempty"`
+	Name        string        `json:"name"`
+	Topic       WebhookTopic  `json:"topic"`
+	Status      WebhookStatus `json:"status,omitempty"`
+	DeliveryURL string        `json:"delivery_url"`
 }
 
 const WebhookEndpoint = "wc/v3/webhooks"
@@ -104,9 +111,14 @@ func (c *clientImpl) QueryWebhooks(deliveryUrl *string) ([]Webhook, error) {
 			return nil, err
 		}
 
-		if deliveryUrl != nil {
-			for _, webhook := range res {
-				if webhook.DeliveryURL == *deliveryUrl {
+		for _, webhook := range res {
+			if deliveryUrl != nil {
+				if webhook.DeliveryURL == *deliveryUrl &&
+					webhook.Status == WebhookStatusActive {
+					allWebhooks = append(allWebhooks, webhook)
+				}
+			} else {
+				if webhook.Status == WebhookStatusActive {
 					allWebhooks = append(allWebhooks, webhook)
 				}
 			}
