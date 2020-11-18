@@ -8,6 +8,9 @@ import (
 
 type ShippingCart struct {
 	CountryCode string     `json:"country_code"`
+	State       string     `json:"state"`
+	City        string     `json:"city"`
+	PostCode    string     `json:"postcode"`
 	CartLines   []CartLine `json:"cart_lines"`
 }
 
@@ -22,6 +25,9 @@ type CartLine struct {
 
 type CalculateShippingParam struct {
 	Country       string `json:"country"`
+	State         string `json:"state"`
+	City          string `json:"city"`
+	PostCode      string `json:"postcode"`
 	ReturnMethods bool   `json:"return_methods"`
 }
 
@@ -42,6 +48,9 @@ func (c *clientImpl) CalculateShipping(shippingCart ShippingCart) (*ShippingResp
 
 	calculateShippingParam := CalculateShippingParam{
 		Country:       shippingCart.CountryCode,
+		State:         shippingCart.State,
+		City:          shippingCart.City,
+		PostCode:      shippingCart.PostCode,
 		ReturnMethods: true,
 	}
 
