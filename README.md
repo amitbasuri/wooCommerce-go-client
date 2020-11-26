@@ -1,6 +1,8 @@
 # wooCommerce-go-client
 
 ![](https://github.com/shoptype/wooCommerce-connector/workflows/Test/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/shoptype/wooCommerce-go-client)](https://goreportcard.com/report/github.com/shoptype/wooCommerce-go-client)
+
 
 A Golang wrapper for the WooCommerce REST API
 
